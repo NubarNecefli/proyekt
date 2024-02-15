@@ -1,0 +1,681 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Panel</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="./person.css">
+    <style>
+        .like_share {
+          display: flex;
+          height: 4rem;
+          justify-content: space-between;
+          align-items: center;
+          padding: 0 1rem;
+          border-top: 1px solid #f3f2ef;
+          border-radius: 0 0 7px 7px;
+          background-color: var(--fisrt_color);
+          cursor: pointer;
+        }
+    
+        .like_share p {
+          padding: 0.7rem;
+          border-radius: 5px;
+          transition: all 0.2s ease;
+        }
+    
+        .like_share p:hover {
+          background: #dfdddb;
+        }
+    
+        .like_share span {
+          padding-left: 0.5rem;
+          font-size: 1.3rem;
+        }
+    
+        button {
+          font-size: 1.2em;
+        }
+    
+        .emoji {
+          font-size: 4em;
+          width: 300px;
+          text-align: right;
+          position: absolute;
+          opacity: 0;
+          transform: translateY(100vh);
+        }
+    
+        .moving {
+          animation: moveToTop 3s forwards;
+        }
+    
+        @keyframes moveToTop {
+          from {
+            opacity: 0;
+            transform: translateY(100vh);
+          }
+          to {
+            opacity: 1;
+            transform: translateY(-30vh);
+          }
+        }
+      </style>
+</head>
+   <body>
+        <header id="header" class="header_box_shadow">
+            <nav class="nav_bar_profil">
+                <div class="logo_search_bar">
+                    <a href="index.html"><img class="logo" src="./images/logo-linkedin.png" alt="logo"></a>
+                    <div class="search_bar">
+                        <i class="fa-solid fa-magnifying-glass"></i>
+                        <input class="search_bar_input"  type="text" placeholder="Research">
+                    </div>
+                </div>
+                <div class="icons_bar_profils">
+                    <ul class="icons_links_profil ">
+                        <li class="icon_link after_element"><a href="index.html"><i class="fa-solid fa-house"></i><p>Home page</p></a></li>
+                        <li class="icon_link"><a href="reseaux.html"><i class="fa-solid fa-user-group"></i><span><p>Networks</p></span></a></li>
+                        <li class="icon_link"><a href="emplois.html"><i class="fa-solid fa-briefcase"></i><span><p>Jobs</p></span></a></li>
+                        <li class="icon_link"><a href="messagerie.html"><i class="fa-solid fa-comment-dots"></i><span><p>Messaging</p></span></a></li>
+                        <li class="icon_link icon_new_notification "><a href="notification.html"><i class="fa-solid fa-bell"></i><span><p>Notifications</p></span></a></li>
+                        <li class="icon_link me" id="profil_button">
+                            <a href="#" id="link_ckeck_pro"><img id="my_profil" src="./images/resim 2.jpg" alt=""><span><p>You<i class="fa-solid fa-caret-down"></i></p></span></a>
+                            <div class="profil_link" id="menu_profil">
+                                <div class="profil_name_job">
+                                    <img class="post_photo_profil" src="./images/resim 2.jpg" alt="#">
+                                    <div class="name_and_job"> 
+                                        <h2>NUBAR NAJAFLI SHAFA</h2>
+                                        <p> FRONTEND DEVELOPER</p>
+                                    </div>
+                                </div>
+                                <div class="see_my_profil"><a href="profil.html">View profile </a></div>
+                                <div class="account">
+                                    <h4>Account</h4>
+                                    <p><a href="#">Upgrade to Premium
+                                    </a></p>
+                                    <p class="option"><a href="#">Preference and Privacy </a></p>
+                                    <p class="option"><a href="#">Help</a></p>
+                                    <p class="option"><a href="#">Language</a></p>
+                                </div>
+                                <div class="account">
+                                    <h4>Manage</h4>
+                                    <p><a href="#">Position and activity
+                                    </a></p>
+                                    <p class="option"><a href="#">Job offer account</a></p>
+                                </div>
+                                <div class="log_out">
+                                    <p>Disconnect</p>
+                                </div>
+                            </div>
+                        </li>
+                    </ul>
+    
+                    <ul id="second_icons_links_nav">
+                        <li class="grid_products"><a href="#"><img  class="grid_icons" src="./images/grid.png" alt="#">
+                            <span ><p>Products <i class="fa-solid fa-caret-down"></i></p></span></a></li>
+    
+                        <li class="new_job_plus"><a href="#"><i class="fa-solid fa-circle-plus"></i><span><p>Post a job offer</p></span> <span class="responsive_text_job_header">Publier une offre <br> d'emploi</span></a></li>
+                    </ul>
+                </div>
+            </nav>
+        </header>
+        
+        <main class="home_page_content">
+            <!-- ------ left_box_----------- -->
+          <section class="left_container">
+              <div class="profil_info">
+                  <div id="img_background"><img src="./images/resim 1.jpg" alt=""></div>
+                  <div class="personnal_info">
+                      <span id="photo_profil"><img src="./images/resim 2.jpg" alt=""></span>
+                      <a href="profil.html"><h5> NUBAR NAJAFLI SHAFA </h5></a>
+                      <p>FRONTEND DEVELOPER</p>
+                  </div>
+                  <div class="vues_post">
+                      <p class="profil_check"><a href="#">Views of your profile  <span>200</span></a></p>
+                      <p class="post_vue"><a href="#">View of your post<span>10</span></a></p>
+                  </div>
+                  <div class="premium">
+                     <p>Access exclusive information and tools</p> 
+                     <span> Upgrade to Premium</span>
+                  </div>
+                  <span class="my_element"><i class="fa-solid fa-bookmark"></i>My elements</span>
+              </div>
+          
+              <div class="favoris">
+                  <div class="preview">
+                      <h6>Recent</h6>
+                      <p><a href="#"><i class="fa-solid fa-people-group"></i> <span>JavaScript</span> </a></p>
+                      <p><a href="#"><i class="fa-solid fa-people-group"></i> <span>Web, mobile outsourcing ...</span></a> </p>
+                      <p><a href="#"><i class="fa-solid fa-people-group"></i> <span>Software and Web applications...</span> </a></p>
+                      <p><a href="#"><i class="fa-solid fa-people-group"></i> <span>PHP Developer</span></a> </p>
+                      <p><a href="#"><i class="fa-solid fa-people-group"></i> <span>Beginner Web Developer...</span> </a></p>
+                  </div>
+                  <div class="group">
+                      <h6><a href="#"> Groupes</a></h6>
+                      <p><a href="#"><i class="fa-solid fa-people-group"></i> <span>JavaScript</span> </a></p>
+                      <p><a href="#"><i class="fa-solid fa-people-group"></i> <span>Web, mobile outsourcing...</span> </a></p>
+                      <p><a href="#"><i class="fa-solid fa-people-group"></i> <span>Software & Web applications...</span> </a></p>
+                      <p class="see-more"> <a href="#"> <span >See more </span><i class="fa-solid fa-angle-down"></i></a></p>
+                  </div>
+                  <p class="event" id="event_p"><a href="#"><span>Event </span> <i class="fa-solid fa-plus"></i></a></p>
+                  <p class="follow" id="follow_p"><a href="#"><span>Followed hashtags</span> <i class="fa-solid fa-angle-up"></i></a></p>
+                  <p> <span class="hashtag">#</span>Web development</p>
+                  <p> <span class="hashtag">#</span>frontend</p>
+                  <p class="see_all"><a href="#">See everything</a></p>
+                  <span class="want_see_more"><a href="#">Discover More</a></span>
+              </div>
+          </section>
+          
+          
+          
+          <section class="center_container">
+          
+              <section class="left_container" id="responsive_left_box">
+                  <div class="profil_info">
+                      <div id="img_background"><img src="./images/mybackgr-min.jpg" alt=""></div>
+                      <div class="personnal_info">
+                          <span id="photo_profil"><img src="./images/my photo.jpg" alt=""></span>
+                          <a href="profil.html"><h5> NUBAR NAJAFLI SHAFA</h5></a>
+                          <p> FRONTEND DEVELOPER</p>
+                      </div>
+
+
+
+
+
+                      <!-- salam -->
+
+
+
+
+
+
+                      <div class="vues_post">
+                          <p class="profil_check"><a href="#">Views of your profile;  <span>170</span></a></p>
+                          <p class="post_vue"><a href="#">View of your post; <span>9</span></a></p>
+                      </div>
+                      <div class="premium">
+                         <p>Access exclusive information and tools</p> 
+                         <span> Upgrade to Premium</span>
+                      </div>
+                      <span class="my_element"><i class="fa-solid fa-bookmark"></i>My elements</span>
+                  </div>
+          
+                  <div class="favoris" id="responsive_favoris">
+                      <div class="preview">
+                          <h6>Recent</h6>
+                          <p><a href="#"><i class="fa-solid fa-people-group"></i> <span>JavaScript</span> </a></p>
+                          <p><a href="#"><i class="fa-solid fa-people-group"></i> <span>Web, mobile outsourcing ...</span></a> </p>
+                          <p><a href="#"><i class="fa-solid fa-people-group"></i> <span>Software and Web applications...</span> </a></p>
+                          <p><a href="#"><i class="fa-solid fa-people-group"></i> <span>PHP Developer</span></a> </p>
+                          <p><a href="#"><i class="fa-solid fa-people-group"></i> <span>Beginner Web Developer...</span> </a></p>
+                      </div>
+                      <div class="group">
+                          <h6><a href="#"> Groups</a></h6>
+                          <p><a href="#"><i class="fa-solid fa-people-group"></i> <span>JavaScript</span> </a></p>
+                          <p><a href="#"><i class="fa-solid fa-people-group"></i> <span>Web, mobile outsourcing...</span> </a></p>
+                          <p><a href="#"><i class="fa-solid fa-people-group"></i> <span>Software and Web applications...</span> </a></p>
+                          <p class="see-more"> <a href="#"> <span >See more </span><i class="fa-solid fa-angle-down"></i></a></p>
+                      </div>
+                      <p class="event" id="event_p"><a href="#"><span>Event </span> <i class="fa-solid fa-plus"></i></a></p>
+                      <p class="follow" id="follow_p"><a href="#"><span>Followed hashtags</span> <i class="fa-solid fa-angle-up"></i></a></p>
+                      <p> <span class="hashtag">#</span>Web development</p>
+                      <p> <span class="hashtag">#</span>frontend</p>
+                      <p class="see_all"><a href="#">See everything</a></p>
+                      <span class="want_see_more"><a href="#">Discover More</a></span>
+                  </div>
+                  <p class="see-more" id="see_more_center_responsive"> <a href="#"> <span  class="responsive_span_more">See more </span><span  class="responsive_span_not_more">Voir moins </span><i class="fa-solid fa-angle-down"></i><i class="fa-solid fa-angle-up"></i></a></p>
+              </section>
+          
+          
+          
+              <div class="new_post">
+                  <div class="profil_writting">
+                      <img class="profil_picture" src="./images/resim 2.jpg" alt="#">
+                      <input type="text" placeholder="Start a post">
+                  </div>
+                  <div class="post_icons">
+                      <p><a href="#"><i class="fa-solid fa-image"></i><span>Photo</span></p></a>
+                      <p><a href="#"><i class="fa-brands fa-youtube"></i><span>Video</span></p></a>
+                      <p><a href="#"><i class="fa-solid fa-calendar-days"></i><span>Event</span></p></a>
+                      <p><a href="#"><i class="fa-solid fa-square-pen"></i><span>Write an article</span></p></a>
+                  </div>
+              </div>
+          
+              <div class="middle_line" id="center_line">
+                  <span class="line"></span>
+                  <span class="line_text"> Sort by: <span> Relevance<i class="fa-solid fa-caret-down"></i></span></span>
+                  <div class="line_menu_toggle">
+                      <p>Relevant</p>
+                      <p>Recent</p>
+                  </div>
+              </div>
+          
+
+
+
+
+
+
+
+              <div class="friends_post">
+                  <div class="post first_post">
+                      <div class="profil_name_job">
+                          <img class="post_photo_profil" src="./images/profil2-min.jpg" alt="#">
+                          <div class="name_and_job"> 
+                              <h5>John Smith William</h4>
+                              <p>Web developer looking for work-study program</p>
+                              <span>22 &nbsp;h. <i class="fa-solid fa-earth-americas"></i></span>
+                          </div>
+                      </div>
+                      <p class="post_text">What's harder than finding a company when you don't have experience in Web Development?<br>
+                          <br>
+                          I am in professional retraining, so find a company with a 5 month prequalification. <a class="more_text" href="#">...see more</a></p>
+                  </div>
+               
+                  <div class="like_share">
+                    <div>
+                        <button id="heart">❤️ LIKE</button>
+                      </div>
+                      <p><i class="fa-solid fa-comment"></i><span><a href="./comment.html">Comment</a></span></p>
+                      <p><i class="fa-solid fa-share"></i><span>Share</span></p>
+                      <p><i class="fa-solid fa-paper-plane"></i><span>Send</span></p>
+                  </div>
+          
+
+
+
+
+
+
+                  <div class="post second_post ">
+                      <div class="profil_name_job">
+                          <img class="post_photo_profil" src="./images/js image.png" alt="#">
+                          <div class="name_and_job"> 
+                              <h5>JavaScript Developer</h4>
+                                  <p>999 subscribers</p>
+                              <span>3&nbsp;h. <i class="fa-solid fa-earth-americas"></i></span>
+                          </div>
+                      </div>
+                      <div class="publication">
+                          <img src="./images/photo3jpg-min.jpg" alt="">
+                      </div>
+                  </div>
+                  <div class="like_share">
+                    <div>
+                        <button id="heart">❤️ LIKE</button>
+                      </div>
+                      <p><i class="fa-solid fa-comment"></i><span><a href="./comment.html">Comment</a></span></p>
+                      <p><i class="fa-solid fa-share"></i><span>Share</span></p>
+                      <p><i class="fa-solid fa-paper-plane"></i><span>Send</span></p>
+                  </div>
+          
+                  <div class="post third_post">
+                      <div class="profil_name_job">
+                          <img class="post_photo_profil" src="./images/profil16.jpg" alt="#">
+                          <div class="name_and_job"> 
+                              <h5>Michael Brown Richard</h4>
+                              <p>Web and Mobile Developer</p>
+                              <span>1 h. <i class="fa-solid fa-earth-americas"></i></span>
+                          </div>
+                      </div>
+                      <p class="post_text">Hi all !!! <br>
+                        Today I present to you Pretto. The company that gave me the opportunity to continue my work-study studies <a class="more_text" href="#">...see more</a></p>
+                      <div class="publication">
+                          <img src="./images/photo5-min.jpg" alt="">
+                      </div>
+                  </div>
+                  <div class="like_share">
+                    <div>
+                        <button id="heart">❤️ LIKE</button>
+                      </div>
+                      <p><i class="fa-solid fa-comment"></i><span><a href="./comment.html">Comment</a></span></p>
+                      <p><i class="fa-solid fa-share"></i><span>Share</span></p>
+                      <p><i class="fa-solid fa-paper-plane"></i><span>Send</span></p>
+                  </div>
+          
+
+
+
+
+
+
+
+
+                  <div class="post third_post">
+                      <div class="profil_name_job">
+                          <img class="post_photo_profil" src="./images/profil15.jpg" alt="#">
+                          <div class="name_and_job"> 
+                              <h5>Christopher Taylor Robert</h4>
+                              <p>Software Engineer</p>
+                              <span>5 h. <i class="fa-solid fa-earth-americas"></i></span>
+                          </div>
+                      </div>
+                      <p class="post_text"> If you are a passionate and creative person and want to make art accessible to everyone, come join our partner. </p>
+                      <div class="publication">
+                          <img src="./images/photo6-min.jpg" alt="">
+                      </div>
+                  </div>
+                  <div class="like_share">
+                    <div>
+                        <button id="heart">❤️ LIKE</button>
+                      </div>
+                      <p><i class="fa-solid fa-comment"></i><span><a href="./comment.html">Comment</a></span></p>
+                      <p><i class="fa-solid fa-share"></i><span>Share</span></p>
+                      <p><i class="fa-solid fa-paper-plane"></i><span>Send</span></p>
+                  </div>
+              </div>
+          
+              <div class="post second_post ">
+                  <div class="profil_name_job">
+                      <img class="post_photo_profil" src="./images/profil12.jpg" alt="#">
+                      <div class="name_and_job"> 
+                          <h5>Jessica Martinez  Miguel</h5>
+                          <p>ENTREPRENEUR, WEB DEVELOPER</p>
+                          <span>1 h. <i class="fa-solid fa-earth-americas"></i></span>
+                      </div>
+                  </div>
+                  <p class="post_text">A good contact is worth much more than a master's degree! </p>
+                  <div class="publication">
+                      <img src="./images/postjpg.jpg" alt="">
+                  </div>
+              </div>
+              <div class="like_share">
+                <div>
+                    <button id="heart">❤️ LIKE</button>
+                  </div>
+                  <p><i class="fa-solid fa-comment"></i><span><a href="./comment.html">Comment</a></span></p>
+                  <p><i class="fa-solid fa-share"></i><span>Share</span></p>
+                  <p><i class="fa-solid fa-paper-plane"></i><span>Send</span></p>
+              </div>
+          
+
+
+              <div class="post second_post ">
+                  <div class="profil_name_job">
+                      <img class="post_photo_profil" src="./images/profil17.jpg" alt="#">
+                      <div class="name_and_job"> 
+                          <h5>Elizabeth Anderson  John</h4>
+                          <p>Software Engineer</p>
+                          <span>3 h. <i class="fa-solid fa-earth-americas"></i></span>
+                      </div>
+                  </div>
+                  <p class="post_text"> Who am I ? </p>
+                  <div class="publication">
+                      <img src="./images/post2.jpg" alt="">
+                  </div>
+              </div>
+              <div class="like_share">
+                <div>
+                    <button id="heart">❤️ LIKE</button>
+                  </div>
+                  <p><i class="fa-solid fa-comment"></i><span><a href="./comment.html">Comment</a></span></p>
+                  <p><i class="fa-solid fa-share"></i><span>Share</span></p>
+                  <p><i class="fa-solid fa-paper-plane"></i><span>Send</span></p>
+              </div>
+          </section>
+          
+
+
+          <!-- ----------------right_container------------- -->
+          <article class="right_container">
+              <div class="follow_people">
+                  <h3>Add to your news feed</h3>
+                  <div class="profil_name_job">
+                      <img class="post_photo_profil" src="./images/profil12.jpg" alt="#">
+                      <div class="name_and_job"> 
+                          <h5>Gleve Luis</h4>
+                          <p>CEO innovation and global growth, <br>click FOLLOW for the latest...</p>
+                      </div>
+                  </div>
+                  <div class="follow_button"><a href="#"><i class="fa-solid fa-plus"></i> Follow</a></div>
+              </div>
+          
+              <div class="follow_people">
+                  <div class="profil_name_job">
+                      <img class="post_photo_profil" src="./images/profil4-min.jpg" alt="#">
+                      <div class="name_and_job"> 
+                          <h5>Cheryla Amanda</h4>
+                          <p>Director of Nac Service <br>click FOLLOW for the latest...</p>
+                      </div>
+                  </div>
+                  <div class="follow_button"><a href="#"><i class="fa-solid fa-plus"></i> Follow</a></div>
+              </div>
+          
+              <div class="follow_people">
+                  <div class="profil_name_job">
+                      <img class="post_photo_profil" src="./images/profil7-min.png" alt="#">
+                      <div class="name_and_job"> 
+                          <h5>Ashley Williams</h4>
+                          <p>Full Stack Developer at Amazon</p>
+                      </div>
+                  </div>
+                  <div class="follow_button"><a href="#"><i class="fa-solid fa-plus"></i> Follow</a></div>
+              </div>
+              <div class="see_all_suggestion"><span>See all suggestions</span><i class="fa-solid fa-right-long"></i></div>
+          
+              <aside class="pub_img_text">
+                  <div class="pub_img">
+                      <img src="./images/pub.jpg" alt="">
+                  </div>
+                  <div class="all_links">
+                      <a href="#">Info &nbsp;Accessibility &nbsp;Customer support <br> General conditions and confidentiality <br>
+                        Ads Preferences &nbsp; Advertisement <br> Professional solutions <br>
+                        Download the willHortone Plus app </a>
+                      <span>WillHortone corporation © 2024</span>
+                  </div>
+              </aside>
+          </article>  
+          </main>
+          
+          
+          
+          
+          
+          
+          
+          
+            <!-- ============messages_box_access========= -->
+              
+            <article class="messages_float_box " id="sms_float_container">
+              <div class="sms_float_header">
+                  <div class="photo_and_title">
+                      <div class="sms_float_photo">
+                          <img src="./images/resim 2.jpg" alt="#">
+                      </div>
+                      <h4>Messaging</h4>
+                  </div>
+                  <div class="float_icons_box">
+                      <i class="fa-solid fa-ellipsis"></i>
+                      <i class="fa-solid fa-pen-to-square"></i>
+                      <span id="btn_toggle_message_box">
+          
+                          <i class="fa-solid fa-angle-up"></i>
+                          <i class="fa-solid fa-angle-down"></i>
+                      </span>
+                  </div>
+              </div>
+          
+              <div class="sms_container">
+                  <div class="message_input_container" >
+                      <i class="fa-solid fa-magnifying-glass"></i>
+                      <input class="message_input" id="search_message" type="text" placeholder="Search messages" onkeyup="dynamicSearch()">
+                      <i class="fa-solid fa-sliders"></i>
+                  </div>
+                  <div class="meassage_profil_container" >
+                      <div class="message_profils_sider">
+                          <a href="messagerie.html">
+                              <div class="message_profil_item message_one others_message">
+                                  <div class="message_profil_photo">
+                                      <img src="./images/profil2-min.jpg" alt="">
+                                  </div>
+                                  <div class="message_profil_name_and_text">
+                                      <p><span class="name_pro">Starky Didier</span>&nbsp; &nbsp; &nbsp;  <span class="message_profil_date">15 feb.</span>
+                                          <i class="fa-solid fa-envelope"></i>
+                                          <i class="fa-solid fa-comment-slash"></i>
+                                      </p>
+                                      <p>Starky: I just <br> receive your CV</p>                             
+                                  </div>
+                              </div>
+                          </a>
+          
+                          <div class="message_profil_item others_message">
+                              <div class="message_profil_photo">
+                                  <img src="./images/profil17.jpg" alt="">
+                              </div>
+                              <div class="message_profil_name_and_text">
+                                  <p><span class="name_pro">Gleve Paul</span> &nbsp; &nbsp; &nbsp;&nbsp; &nbsp; &nbsp;   <span class="message_profil_date">15 feb.</span> <i class="fa-solid fa-envelope"></i>
+                                      <i class="fa-solid fa-comment-slash"></i></p>
+                                  <p>Gleve: There are <br> internships available </p>
+                              </div>
+                          </div>
+                          <div class="message_profil_item others_message">
+                              <div class="message_profil_photo">
+                                  <img src="./images/profil9-min.jpg" alt="">
+                              </div>
+                              <div class="message_profil_name_and_text">
+                                  <p><span class="name_pro">George Clement</span> &nbsp; <span class="message_profil_date">15 feb.</span><i class="fa-solid fa-envelope"></i>
+                                      <i class="fa-solid fa-comment-slash"></i></p>
+                                  <p>George:I will let you know</p>
+                              </div>
+                          </div>
+                          <div class="message_profil_item others_message">
+                              <div class="message_profil_photo">
+                                  <img src="./images/profil8-min.jpg" alt="">
+                              </div>
+                              <div class="message_profil_name_and_text">
+                                  <p> <span class="name_pro">Christoph Rode</span> &nbsp; &nbsp; <span class="message_profil_date">15 feb.</span><i class="fa-solid fa-envelope"></i>
+                                      <i class="fa-solid fa-comment-slash"></i></p>
+                                  <p>Christoph: I'm coming <br> receive your CV</p>
+                              </div>
+                          </div>
+                          <div class="message_profil_item others_message">
+                              <div class="message_profil_photo">
+                                  <img src="./images/profil5-min.jpg" alt="">
+                              </div>
+                              <div class="message_profil_name_and_text">
+                                  <p><span class="name_pro">Sindy Rose</span> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;  <span class="message_profil_date">15 feb.</span><i class="fa-solid fa-envelope"></i>
+                                      <i class="fa-solid fa-comment-slash"></i></p>
+                                  <p>Sindy: Why did you <br> send it here?</p>
+                              </div>
+                          </div>
+                          <div class="message_profil_item others_message">
+                              <div class="message_profil_photo">
+                                  <img src="./images/profil3-min.jpeg" alt="">
+                              </div>
+                              <div class="message_profil_name_and_text">
+                                  <p> <span class="name_pro">Jean Marc</span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;  <span class="message_profil_date">15 feb.</span><i class="fa-solid fa-envelope"></i>
+                                      <i class="fa-solid fa-comment-slash"></i></p>
+                                  <p>jean: What did you want ?<br>tell me yesterday?</p>
+                              </div>
+                          </div>
+                          <div class="message_profil_item others_message">
+                              <div class="message_profil_photo">
+                                  <img src="./images/profil4-min.jpg" alt="">
+                              </div>
+                              <div class="message_profil_name_and_text">
+                                  <p><span class="name_pro">Eunice Sie </span> &nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;<span class="message_profil_date">15 feb.</span><i class="fa-solid fa-envelope"></i>
+                                      <i class="fa-solid fa-comment-slash"></i></p>
+                                  <p>Eunice: Are you interesting  <br> for an internship? </p>
+                              </div>
+                          </div>
+                          <div class="message_profil_item others_message">
+                              <div class="message_profil_photo">
+                                  <img src="./images/profil10-min.jpg" alt="">
+                              </div>
+                              <div class="message_profil_name_and_text">
+                                  <p><span class="name_pro">Rodriguo  </span> &nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; <span class="message_profil_date">20 mar.</span><i class="fa-solid fa-envelope"></i>
+                                      <i class="fa-solid fa-comment-slash"></i></p>
+                                  <p>Rodrigo: No worries I<Br>will give you a sign.</Br></p>
+                              </div>
+                          </div>
+                          <div class="message_profil_item others_message">
+                              <div class="message_profil_photo">
+                                  <img src="./images/profil11.jpg" alt="">
+                              </div>
+                              <div class="message_profil_name_and_text">
+                                  <p> <span class="name_pro">Patric </span> &nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp; <span class="message_profil_date">10 mar.</span><i class="fa-solid fa-envelope"></i>
+                                      <i class="fa-solid fa-comment-slash"></i></p>
+                                  <p>Patric: Life is not easy</p>
+                              </div>
+                          </div>
+                          <div class="message_profil_item others_message">
+                              <div class="message_profil_photo">
+                                  <img src="./images/profil8-min.jpg" alt="">
+                              </div>
+                              <div class="message_profil_name_and_text">
+                                  <p> <span class="name_pro">Hoane louis </span> &nbsp; &nbsp;&nbsp; &nbsp; <span class="message_profil_date">11 fev.</span><i class="fa-solid fa-envelope"></i>
+                                      <i class="fa-solid fa-comment-slash"></i></p>
+                                  <p>Hoane: I have nothing to say </p>
+                              </div>
+                          </div>
+                          <div class="message_profil_item others_message">
+                              <div class="message_profil_photo">
+                                  <img src="./images/profil16.jpg" alt="">
+                              </div>
+                              <div class="message_profil_name_and_text">
+                                  <p> <span class="name_pro">Jonas louis </span> &nbsp; &nbsp;&nbsp; &nbsp; <span class="message_profil_date">11 fev.</span><i class="fa-solid fa-envelope"></i>
+                                      <i class="fa-solid fa-comment-slash"></i></p>
+                                  <p>Jonas: I have nothing to say </p>
+                              </div>
+                          </div>
+                          <div class="message_profil_item others_message">
+                              <div class="message_profil_photo">
+                                  <img src="./images/profil8-min.jpg" alt="">
+                              </div>
+                              <div class="message_profil_name_and_text">
+                                  <p><span class="name_pro">Xavier </span> &nbsp; &nbsp;&nbsp; &nbsp; <span class="message_profil_date">11 fev.</span><i class="fa-solid fa-envelope"></i>
+                                      <i class="fa-solid fa-comment-slash"></i></p>
+                                  <p>Xavier: I have nothing to say </p>
+                              </div>
+                          </div>
+                          <div class="message_profil_item others_message">
+                              <div class="message_profil_photo">
+                                  <img src="./images/profil11.jpg" alt="">
+                              </div>
+                              <div class="message_profil_name_and_text">
+                                  <p><span class="name_pro">Pral vie</span> &nbsp; &nbsp;&nbsp; &nbsp; <span class="message_profil_date">11 fev.</span><i class="fa-solid fa-envelope"></i>
+                                      <i class="fa-solid fa-comment-slash"></i></p>
+                                  <p>Pral: I have nothing to say </p>
+                              </div>
+                          </div>
+                      </div>
+                  </div>
+              </div> 
+          
+          </article>
+          
+          
+          
+          
+        
+
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+    <script src="./person.js"></script>
+    <script>
+      const heartButton = document.querySelector("#heart");
+      const emojiArray = ["❤️", "⭐", "😎"];
+  
+      heartButton.addEventListener("click", () => lotsOfEmoji());
+  
+      function lotsOfEmoji() {
+        for (let i = 0; i < 20; i++) {
+          createEmoji();
+        }
+      }
+  
+      function createEmoji() {
+        const div = document.createElement("div");
+        document.body.appendChild(div);
+        div.innerHTML = emojiArray[Math.floor(Math.random() * 3)];
+        div.style.width = Math.random() * 600 + "px";
+        div.classList.add("emoji");
+        div.style.animationDelay = `${Math.random()}s`;
+        div.classList.add("moving");
+        div.addEventListener("animationend", (e) => e.target.remove());
+      }
+    </script>
+</body>
+</html>

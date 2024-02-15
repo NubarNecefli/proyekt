@@ -1,0 +1,189 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  outline: none;
+  list-style: none;
+}
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-color: #fafcfd;
+  overflow: hidden;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  color: black;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  background-color: #f5f6f8;
+  width: 380px;
+  /* height: 500px; */
+  border-radius: 20px;
+  padding: 30px;
+  color: #111111;
+}
+
+form h2 {
+  font-weight: 500;
+  text-align: center;
+  font-size: 2em;
+  margin-bottom: 10px;
+  color: black;
+}
+
+form label {
+  padding: 10px 0px;
+  text-transform: capitalize;
+  color: black;
+}
+
+form input[type="email"],
+form input[type="text"],
+form input[type="password"],
+form input[type="submit"] {
+  padding: 10px 15px;
+  font-size: 16px;
+  border-radius: 8px;
+  border: 2px solid transparent;
+  color: #efefef;
+  background-color: #737b85;
+  line-height: 1.6;
+  font-weight: 600;
+  width: 100%;
+}
+
+::placeholder {
+  color: #ffffff96;
+}
+
+.conditions {
+  padding: 15px 5px 25px;
+  color: #737b85;
+}
+
+.conditions li {
+  position: relative;
+  padding-left: 10px;
+  transition: 0.25s;
+}
+
+.conditions li:before {
+  content: "";
+  position: absolute;
+  bottom: 50%;
+  left: 0;
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  background-color: #737b85;
+  transform: translateY(50%);
+}
+
+form input[type="submit"] {
+  background-color: #30a1ff;
+}
+
+li.check {
+  padding-left: 25px;
+  color: #8bc34a;
+  /* transition: background-color;
+    transition-duration: 0.05s; */
+}
+
+li.check::before {
+  background-color: transparent;
+  font-family: "Font Awesome 5 Free";
+  font-weight: 900;
+  content: "\f00c";
+  width: fit-content;
+  height: fit-content;
+  /* transition: background-color;
+    transition-duration: 0.05s; */
+}
+
+.input-password {
+  position: relative;
+}
+
+.input-password i {
+  position: absolute;
+  right: 15px;
+  top: 50%;
+  transform: translateY(-50%);
+  cursor: pointer;
+  color: #c5c9c8;
+}
+
+form input[type="email"].invalid,
+form input[type="password"].invalid {
+  background-color: #e93b3b;
+}
+
+form input[type="email"]:focus-within,
+form input[type="password"]:focus-within {
+  background-color: #737b85;
+}
+
+.btn-division-or {
+  display: flex;
+  width: 100%;
+  padding-block: 16px 24px;
+  justify-content: center;
+  align-items: center;
+}
+
+.btn-division-or span {
+  display: inline-block;
+  height: 20px;
+  padding-inline: 10px;
+  color: var(--grey-light-color);
+  font-size: var(--xs-small-size);
+}
+
+.btn-division-or::before {
+  background-color: var(--grey-light-color);
+  width: 50%;
+  height: 1px;
+  content: "";
+}
+
+.btn-division-or::after {
+  background-color: var(--grey-light-color);
+  width: 50%;
+  height: 1px;
+  content: "";
+}
+
+.google-sign-in-btn {
+  justify-content: center;
+  width: 100%;
+  gap: 5px;
+  margin-bottom: 16px;
+}
+
+.google-sign-in-btn img {
+  width: 18px;
+  height: 18px;
+}
+
+.new-user-sign-up-btn {
+  width: 100%;
+  margin-bottom: 24px;
+}
+
+#logo {
+  position: absolute;
+  width: 100%;
+  height: 620px;
+  background-image: url(/images/logo-linkedin.png);
+  cursor: none;
+}
+
+#loginForm {
+  position: relative;
+}
