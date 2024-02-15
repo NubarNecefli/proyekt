@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Recipe Card</title>
+  <link rel="stylesheet" href="./articles.css">
+</head>
+<body>
+  <section class="wrapper">
+  
+    <!-- BEGIN: menu -->
+    <nav class="menu">
+      <ul class="menu__list">
+        <li class="menu__item  js-modify  active" data-target=".card" data-effect="zoom">Zoom out</li>
+        <li class="menu__item  js-modify" data-target=".card" data-effect="blur">Blur</li>
+        <li class="menu__item  js-modify" data-target=".card" data-effect="color">Colors</li>
+      </ul>
+    </nav>
+    <!-- END: menu -->
+    
+    <!-- BEGIN: card -->
+    <div class="card" data-effect="zoom">
+      <button class="card__save  js-save" type="button">
+        <i class="fa  fa-bookmark"></i>
+       </button>
+      <figure  class="card__image">
+        <img src="https://c1.staticflickr.com/4/3935/32253842574_d3d449ab86_c.jpg" alt="Short description">
+      </figure>
+      <div class="card__header">
+        <figure class="card__profile">
+          <img src="./images/resim 2.jpg" alt="Short description">
+        </figure>
+      </div>
+      <div class="card__body">
+        <h3 class="card__name">Neil Armstrong</h3>
+        <p class="card__job">You’re a call center manager. How can you use scheduling software to boost your agents’ productivity?</p>
+        <p class="card__bio"> Learn how scheduling software can help you optimize your agents' performance and service level by forecasting, managing, and monitoring your call center schedules.
+        </p>
+      </div>
+      <div class="card__footer">
+        <p class="card__date">Feb 21 2024</p>
+        <p class=""></p>
+      </div>
+    </div>
+    <!-- END: card -->
+    
+  </section>
+
+  <script src="./articles.js"></script>
+</body>
+</html>
